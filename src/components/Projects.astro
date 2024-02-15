@@ -1,0 +1,166 @@
+---
+import ToolPill from "../components/ToolPill.astro";
+import IconHtml from "./icons/IconHtml.astro";
+import IconCss from "./icons/IconCss.astro";
+import IconGitHubWhite from "./icons/IconGitHubWhite.astro";
+import IconJavaScript from "./icons/IconJavaScript.astro";
+import ChevronRight from "./icons/ChevronRight.astro";
+
+const PROJECTS = [
+    {
+        title: "Analizador lexico y sintactico",
+        description:
+            "Analizar sintactico y lexico LL(1). Reconoce y realiza las siguientes operaciones: + - * / < > <= >= && || ()",
+        link: "#",
+        github: "github",
+        image: "https://w1.pngwing.com/pngs/22/231/png-transparent-blossom-clawfree-graph-matching-graph-theory-independent-set-induced-subgraph-maximal-independent-set-path.png",
+        tags: [
+            {
+                name: "HTML",
+                icon: IconHtml,
+            },
+            {
+                name: "CSS",
+                icon: IconCss,
+            },
+            {
+                name: "JavaScript",
+                icon: IconJavaScript,
+            },
+        ],
+    },
+    {
+        title: "Analizador lexico y sintactico",
+        description:
+            "Project description asldkfj ñaljkdf ñlakjsf ñlkajsf ñlkjasdf ñlkjasdf ñlkjasd ñlkjasdf ñlkjasdf ñlkjasdf ñlkjasdf jñlkjasd ñlkj",
+        link: "#",
+        github: "github",
+        image: "https://w1.pngwing.com/pngs/22/231/png-transparent-blossom-clawfree-graph-matching-graph-theory-independent-set-induced-subgraph-maximal-independent-set-path.png",
+        tags: [
+            {
+                name: "HTML",
+                icon: IconHtml,
+            },
+            {
+                name: "CSS",
+                icon: IconCss,
+            },
+            {
+                name: "JavaScript",
+                icon: IconJavaScript,
+            },
+        ],
+    },
+    {
+        title: "Analizador lexico y sintactico",
+        description:
+            "Project description asldkfj ñaljkdf ñlakjsf ñlkajsf ñlkjasdf ñlkjasdf ñlkjasd ñlkjasdf ñlkjasdf ñlkjasdf ñlkjasdf jñlkjasd ñlkj",
+        link: "#",
+        github: "github",
+        image: "https://w1.pngwing.com/pngs/22/231/png-transparent-blossom-clawfree-graph-matching-graph-theory-independent-set-induced-subgraph-maximal-independent-set-path.png",
+        tags: [
+            {
+                name: "HTML",
+                icon: IconHtml,
+            },
+            {
+                name: "CSS",
+                icon: IconCss,
+            },
+            {
+                name: "JavaScript",
+                icon: IconJavaScript,
+            },
+        ],
+    },
+];
+---
+
+<section class="grid-projects p-2 sm:w-[400px] md:w-[600px] lg:w-[1000px]">
+    {
+        PROJECTS.map((project) => (
+            <article class="element-grid-projects bg-gray-950 rounded-sm shadow-lg shadow-violet-900/50 hover:scale-105 hover:shadow-violet-900/90 ease-in-out transition duration-200">
+                <img
+                    class="size-60 object-contain w-full h-[180px]"
+                    src={project.image}
+                    alt={`Captura de pantalla del proyecto ${project.image}`}
+                />
+                <div class="px-6 py-4 flex flex-col gap-2">
+                    <h3 class="w-full text-green-400 font-bold text-xl text-pretty">
+                        {project.title}
+                    </h3>
+                    <p class="w-full font-normal text-sm h-20">
+                        {project.description}
+                    </p>
+                    <div class="mx-auto h-18 z-10 relative">
+                        <a
+                            class="
+                                mx-auto 
+                                cursor-pointer
+                                h-7 
+                                w-[52px]
+                                flex 
+                                justify-center
+                                items-center 
+                                z-0
+                                effect-button
+                            "
+                            data-tooltip-target="tooltip-default"
+                        >                            
+                            <span title="Repositorio" class="bg-gray-950 flex">
+                                <IconGitHubWhite class="ml-2 w-5 h-5 mt-[2px] mr-[-3px]" />
+                                <ChevronRight class="left-6 w-5 h-5 stroke-white fill-transparent" />
+                            </span>                            
+                        </a>   
+                    </div>
+                    <hr class="h-px my-2 border-0 bg-gradient-to-r from-violet-900 to-green-400 opacity-30" />
+                    <ul class="w-full flex gap-6">
+                        {project.tags.map((tag) => (
+                            <ToolPill>
+                                <tag.icon class="w-4 h-4" />
+                                <li class="text-[10px]">{tag.name}</li>
+                            </ToolPill>
+                        ))}
+                    </ul>
+                </div>
+            </article>
+        ))
+    }
+</section>
+
+<style>
+    .effect-button {
+        border: 0;
+        background-image: linear-gradient(
+            150deg,
+            rgb(74 222 128),
+            rgb(76 29 149),
+            #212331
+        );
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    .effect-button span {
+        paddin: 5px 10px;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+    .effect-button:hover span {
+        background: none;
+    }
+    .effect-button:active {
+        transform: scale(0.9);
+    }
+
+    .grid-projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        column-gap: 6rem;
+        row-gap: 4rem;
+        margin: 0 auto;
+    }
+    .element-grid-projects {
+        width: 100%;
+        height: auto;
+    }
+</style>

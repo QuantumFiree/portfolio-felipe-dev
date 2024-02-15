@@ -1,0 +1,81 @@
+<div class="
+    navbar-container 
+    w-[430px]
+    mx-auto
+    "
+>    
+    <div class="
+        w-full h-[50px] 
+        "
+    >
+    </div>
+    <nav 
+        class="
+            fixed 
+            top-7
+            z-50
+            nav-glass
+            w-max h-14 sm:h-10 md:h-12 lg:h-14 xl:h-14
+            flex gap-x-5 flex-row items-center opacity-80 
+            py-0 px-6
+            xl:text-md lg:text-md md:text-md sm:text-sm
+            rounded-full
+            text-green-500
+            mt-4
+        "
+    >
+        <a class="nav-link hover:text-green-300 py-3 active" href="#top">Inicio</a>
+        <a class="nav-link hover:text-green-300 py-3" href="#projects">Proyectos</a>
+        <a class="nav-link hover:text-green-300 py-3" href="#experience">Experiencia</a>
+        <a class="nav-link hover:text-green-300 py-3" href="#about">Sobre mi</a>
+        <a class="nav-link hover:text-green-300 py-3" href="#contact">Contacto</a>
+    </nav>
+</div>
+<style>
+    .navbar-container {
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows: 1;
+	}
+
+	.navbar-container nav {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	.navbar-container div {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.nav-glass {
+		background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.2),
+			rgba(255, 255, 255, 0.1)
+		);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+	}
+
+	.nav-link {
+		border-bottom: 0px solid transparent;
+		text-shadow: 0 0 0px rgb(74 222 128);
+		transition: all 0.3s ease-in-out;
+	}
+
+	.nav-link.active {
+		font-weight: bold;
+		text-shadow: 0 0 10px #61a57bf6;
+		transition: all 0.3s ease-in-out;
+		border-bottom: 2px solid rgb(74 222 128);
+	}
+	.nav-link.active:hover {
+		font-weight: bold;
+	}
+	.nav-link:hover {
+		font-weight: normal;
+	}
+</style>

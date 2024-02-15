@@ -1,0 +1,60 @@
+---
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import BitsAndBytes from '../components/animations/BitsAndBytes.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import GitHub from '../components/icons/GitHub.astro';
+import MailBox from '../components/icons/MailBox.astro';
+---
+
+<header class=`relative w-full xl:w-[1120px] flex justify-center items-center px-5 w-[1120px] mx-auto mb-32 ${Astro.props.class}`>
+    <div class="
+                flex flex-col justify-center mx-auto 
+                w-[350px] sm:w-[600px] md:w-[730px] lg:w-[1000px] xl:w-[1200px] 
+                px-2 xl:px-40 lg:px-48 md:px-32 sm:px-10
+            "
+    >
+    <slot name="Navbar"/>
+
+        <img   
+    		    src="../../public/photo-profile.jpeg" 
+    		    alt="felipe photo"
+    		    class="rounded-full h-16 w-16 mb-5"
+    		/>
+			<h1 class="text-white text-5xl font-bold flex items-center gap-5 pb-9">
+				<span class="neon-name">
+					Hey, Soy Felipe.
+				</span>
+				<Badge>
+					Disponible para trabajar
+				</Badge>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-wrap text-pretty">
+				<span class="text-green-300 font-bold">En busca de mi primera experiencia laboral.</span>
+				 Ingeniero de Sistemas y Desarrollador Web.
+				<span class="text-violet-500 font-bold">De Nariño, Colombia.</span> Especializado en aprender.
+			</h2>
+			<nav>
+				<ul class="flex gap-x-3 mt-10 px-1">
+					<li>
+						<SocialPill href="hola">
+							<LinkedIn class="w-5 h-5"/>
+							LinkedIn
+						</SocialPill>
+					</li>
+					<li>
+						<SocialPill href="https://github.com/QuantumFiree">
+							<GitHub class="w-5 h-5"/>
+							GitHub
+						</SocialPill>
+					</li>
+					<li>
+						<SocialPill href="mailto:dr.goostt@gmail.com">
+							<MailBox class="w-5 h-5"/>
+							dr.goostt@gmail.com
+						</SocialPill>
+					</li>
+				</ul>
+			</nav>
+    </div>
+</header>

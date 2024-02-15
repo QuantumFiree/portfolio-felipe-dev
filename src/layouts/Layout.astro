@@ -1,0 +1,84 @@
+---
+import Footer from "../components/Footer.astro";
+// Supports weights 100-900
+import "@fontsource-variable/onest";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<script>
+			document.addEventListener("scroll", function () {
+				var scrollPosition = window.scrollY;
+				var windowHeight = window.innerHeight;
+				var sections = document.querySelectorAll("section");
+
+				sections.forEach(function (section) {
+					var sectionTop = section.offsetTop;
+					var sectionHeight = section.offsetHeight;
+
+					// Ajuste: Verificar si la sección está completamente visible en la ventana gráfica
+					if (
+						scrollPosition >= sectionTop &&
+						scrollPosition < sectionTop + sectionHeight
+					) {
+						var navLinks = document.querySelectorAll(".nav-link");
+						navLinks.forEach(function (link) {
+							link.classList.remove("active");
+						});
+						var correspondingLink = document.querySelector(
+							'a[href="#' + section.id + '"]',
+						);
+						if (correspondingLink) {
+							correspondingLink.classList.add("active");
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		color: white;
+		scroll-behavior: smooth;
+		box-sizing: border-box;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		font-family: "Onest Variable", sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #212331;
+		overflow: auto;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>
